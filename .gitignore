@@ -53,6 +53,23 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
+# Unity generated files
+.vs/
+.idea/
+.vscode/
+Library/
+Temp/
+Obj/
+Builds/
+.gradle/
+.userprefs
+
+# User-specific files
+*.user
+*.userprefs
+*.suo
+*.tmp
+
 # Unity3D generated file on crash reports
 sysinfo.txt
 
