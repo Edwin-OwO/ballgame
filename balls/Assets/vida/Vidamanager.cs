@@ -17,6 +17,8 @@ public class Vidamanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (healthamount <= 0)
         {
             

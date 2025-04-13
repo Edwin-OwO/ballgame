@@ -10,6 +10,7 @@ public class pelota : MonoBehaviour
     [SerializeField] KeyCode keyUp;
     [SerializeField] KeyCode keyDown;
     [SerializeField] float factorResize = 1;
+    [SerializeField] manager manager;
     Rigidbody2D rb;
     bool Right; 
     bool Up;
@@ -28,9 +29,13 @@ public class pelota : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
-        Move();
+        if (manager.Jugando)
+        {
+            Move();
+        }
+       
     }
 
     private void Move()
@@ -41,7 +46,8 @@ public class pelota : MonoBehaviour
         if (Input.GetKey(keyLeft))
             Left = true;
 
-        if (Input.GetKeyDown(keyUp) && puedeSaltar)
+        // && puedeSaltar
+        if (Input.GetKey(keyUp))
             Up = true;  
 
         if (Input.GetKey(keyDown))
@@ -67,9 +73,10 @@ public class pelota : MonoBehaviour
     
         
          if (Up)
-             if (!MoverConFisica)
+            
+        if (!MoverConFisica)
             {
-                transform.Translate(Vector2.up * velocity);
+               transform.Translate(Vector2.up * velocity);
             }
                 
              else
