@@ -1,7 +1,15 @@
+using System.Collections;
 using UnityEngine;
 
 public class pelota : MonoBehaviour
 {
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
+
     [SerializeField] bool puedeSaltar = false;
     [SerializeField] bool MoverConFisica = false;
     [SerializeField] float velocity = 0.01f;
@@ -11,6 +19,7 @@ public class pelota : MonoBehaviour
     [SerializeField] KeyCode keyDown;
     [SerializeField] float factorResize = 1;
     [SerializeField] manager manager;
+    [SerializeField] private TrailRenderer tr;
     Rigidbody2D rb;
     bool Right; 
     bool Up;
@@ -91,6 +100,18 @@ public class pelota : MonoBehaviour
             else
                 rb.AddForce(Vector2.down * velocity);
             Down = false;
+        
+        private IEnumerator Dash()
+        {
+         canDash = false;
+         isDashing = true;
+         
+
+        }
+        
+        
+        
+        
 
     }
 
