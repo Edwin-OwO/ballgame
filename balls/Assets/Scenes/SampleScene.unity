@@ -1003,9 +1003,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121133b2728f00745a2784280cc8acda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashSpeed: 0.2
+  dashLength: 0.5
+  dashCooldown: 1
   puedeSaltar: 0
   MoverConFisica: 0
-  velocity: 0.1
+  moveSpeed: 0.1
   keyLeft: 97
   keyRight: 100
   keyUp: 119

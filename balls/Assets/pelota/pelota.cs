@@ -3,23 +3,24 @@ using UnityEngine;
 
 public class pelota : MonoBehaviour
 {
-    private bool canDash = true;
-    private bool isDashing;
-    private float dashingPower = 24f;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float activeMoveSpeed;
+    public float dashSpeed;
+    public float dashLength = .5f, dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
 
 
     [SerializeField] bool puedeSaltar = false;
     [SerializeField] bool MoverConFisica = false;
-    [SerializeField] float velocity = 0.01f;
+    [SerializeField] float moveSpeed = 0.01f;
     [SerializeField] KeyCode keyLeft;
     [SerializeField] KeyCode keyRight;
     [SerializeField] KeyCode keyUp;
     [SerializeField] KeyCode keyDown;
     [SerializeField] float factorResize = 1;
     [SerializeField] manager manager;
-    [SerializeField] private TrailRenderer tr;
+   
     Rigidbody2D rb;
     bool Right; 
     bool Up;
@@ -34,7 +35,7 @@ public class pelota : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        activeMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -43,9 +44,38 @@ public class pelota : MonoBehaviour
         if (manager.Jugando)
         {
             Move();
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (dashCoolCounter <= 0 && dashCounter <= 0)
+                {
+                    activeMoveSpeed = dashSpeed;
+                    dashCounter = dashLength;
+                }
+            }
+
+            if (dashCounter > 0)
+            {
+                dashCounter -= Time.deltaTime;
+
+                if (dashCounter <= 0)
+                {
+                    activeMoveSpeed = moveSpeed;
+                    dashCoolCounter = dashCooldown;
+                }
+            }
+
+            if (dashCoolCounter > 0)
+            {
+                dashCoolCounter -= Time.deltaTime;
+            }
         }
-       
     }
+
+
+
+
+
 
     private void Move()
     {
@@ -67,16 +97,16 @@ public class pelota : MonoBehaviour
     {
         if (Right)
             if (!MoverConFisica)
-                transform.Translate(Vector2.right * velocity);
+                transform.Translate(Vector2.right * activeMoveSpeed);
             else
-                rb.AddForce(Vector2.right * velocity);
+                rb.AddForce(Vector2.right * activeMoveSpeed);
            Right = false;
 
         if (Left)
             if (!MoverConFisica)
-                transform.Translate(Vector2.left * velocity);
+                transform.Translate(Vector2.left * activeMoveSpeed);
             else
-                rb.AddForce(Vector2.left * velocity);
+                rb.AddForce(Vector2.left * activeMoveSpeed);
             Left = false;
 
     
@@ -85,29 +115,23 @@ public class pelota : MonoBehaviour
             
         if (!MoverConFisica)
             {
-               transform.Translate(Vector2.up * velocity);
+               transform.Translate(Vector2.up * activeMoveSpeed);
             }
                 
              else
-                rb.AddForce(Vector2.up * velocity);
+                rb.AddForce(Vector2.up * activeMoveSpeed);
        
 
         Up = false;
 
         if (Down)
             if (!MoverConFisica)
-                transform.Translate(Vector2.down * velocity);
+                transform.Translate(Vector2.down * activeMoveSpeed);
             else
-                rb.AddForce(Vector2.down * velocity);
+                rb.AddForce(Vector2.down * activeMoveSpeed);
             Down = false;
         
-        private IEnumerator Dash()
-        {
-         canDash = false;
-         isDashing = true;
-         
 
-        }
         
         
         
