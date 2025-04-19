@@ -18,11 +18,14 @@ public class enemyfollow : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
     }
 
+    //private void OnTriggerEnter2D(Collider2D collision) {if (collision.gameObject.tag == "Player"){Debug.Log("tocando");}}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("tocando");
+            collision.GetComponent<Playerstats>().takedamage(10f);
+            Destroy(gameObject);
         }
     }
 }

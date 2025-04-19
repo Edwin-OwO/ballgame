@@ -6,6 +6,7 @@ public class Vidamanager : MonoBehaviour
 
     [SerializeField] public Image healthbar;
     [SerializeField] public float healthamount = 100f;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

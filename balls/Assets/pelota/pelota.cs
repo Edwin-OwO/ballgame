@@ -20,7 +20,8 @@ public class pelota : MonoBehaviour
     [SerializeField] KeyCode keyDown;
     [SerializeField] float factorResize = 1;
     [SerializeField] manager manager;
-   
+    
+
     Rigidbody2D rb;
     bool Right; 
     bool Up;
@@ -35,6 +36,7 @@ public class pelota : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         activeMoveSpeed = moveSpeed;
     }
 
