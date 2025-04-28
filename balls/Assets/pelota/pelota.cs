@@ -10,7 +10,7 @@ public class pelota : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
 
-
+    // serializado significa que se puede alterar adentro del editor
     [SerializeField] bool puedeSaltar = false;
     [SerializeField] bool MoverConFisica = false;
     [SerializeField] float moveSpeed = 0.01f;
@@ -43,9 +43,11 @@ public class pelota : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+
         if (manager.Jugando)
         {
             Move();
+            
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
@@ -76,7 +78,7 @@ public class pelota : MonoBehaviour
 
 
 
-
+   
 
 
     private void Move()

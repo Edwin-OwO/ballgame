@@ -27,7 +27,7 @@ public class enemyfollow : MonoBehaviour
 
     public void takedamage(int damage)
     {
-        Instantiate (bloodEffect, transform.position, Quaternion.identity);
+        //Instantiate (bloodEffect, transform.position, Quaternion.identity);
         health -= damage;
         Debug.Log("Damage taken");
 
