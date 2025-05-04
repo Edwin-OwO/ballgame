@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class attack : MonoBehaviour
 {
+    Rigidbody2D rb2d;
     private float cooldown;
     public float start;
-
     public Transform pos;
     public float range;
     public LayerMask whatisenemy;
@@ -19,7 +19,7 @@ public class attack : MonoBehaviour
                 Collider2D[] enemiestodamage = Physics2D.OverlapCircleAll(pos.position, range, whatisenemy);
                 for (int i = 0; i < enemiestodamage.Length; i++) 
                 {
-                    enemiestodamage[i].GetComponent<enemyfollow>().takedamage(damage);
+                    enemiestodamage[i].GetComponent<enemyfollow>().takedamage(damage,transform.parent.gameObject);
 
 
                 }

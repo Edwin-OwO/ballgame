@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200814721}
   - component: {fileID: 200814722}
+  - component: {fileID: 200814723}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -252,6 +253,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &200814723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200814720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9507b2ad6b476c540a431ea3551304b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0.5
+  pos: {fileID: 200814721}
+  range: 0.5
+  whatisenemy:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 1
 --- !u!1 &257927146
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,9 +538,11 @@ GameObject:
   m_Component:
   - component: {fileID: 392105116}
   - component: {fileID: 392105115}
-  - component: {fileID: 392105117}
   - component: {fileID: 392105118}
   - component: {fileID: 392105119}
+  - component: {fileID: 392105120}
+  - component: {fileID: 392105121}
+  - component: {fileID: 392105122}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -598,21 +620,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &392105117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392105113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  health: 1
-  bloodEffect: {fileID: 0}
 --- !u!50 &392105118
 Rigidbody2D:
   serializedVersion: 5
@@ -621,14 +628,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392105113}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -686,6 +693,98 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &392105120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392105113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodEffect: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392105121}
+        m_TargetAssemblyTypeName: knockback, Assembly-CSharp
+        m_MethodName: PlayFeedback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  dead: 0
+  maxh: 5
+  health: 5
+--- !u!114 &392105121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392105113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca70b791f1588f54bbfc034ca3d3f5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 392105118}
+  strength: 16
+  delay: 0.15
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392105122}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392105122}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &392105122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392105113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67228974fc55b644d9c1605c129b2f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &438924206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1601,6 @@ GameObject:
   - component: {fileID: 1174023205}
   - component: {fileID: 1174023206}
   - component: {fileID: 1174023207}
-  - component: {fileID: 1174023208}
   - component: {fileID: 1174023209}
   - component: {fileID: 1174023211}
   - component: {fileID: 1174023210}
@@ -1617,9 +1715,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 200814721}
   - {fileID: 1868719306}
   - {fileID: 822622569}
-  - {fileID: 200814721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1174023204
@@ -1794,25 +1892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhealth: 100
   healthbar: {fileID: 1129102083}
---- !u!114 &1174023208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174023199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9507b2ad6b476c540a431ea3551304b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: 0.5
-  pos: {fileID: 1868719306}
-  range: 0.5
-  whatisenemy:
-    serializedVersion: 2
-    m_Bits: 64
-  damage: 1
 --- !u!114 &1174023209
 MonoBehaviour:
   m_ObjectHideFlags: 0
