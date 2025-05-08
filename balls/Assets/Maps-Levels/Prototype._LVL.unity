@@ -236,9 +236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
   bloodEffect: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  dead: 0
+  maxh: 0
+  health: 0
 --- !u!212 &87442282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -426,9 +433,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
   bloodEffect: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  dead: 0
+  maxh: 0
+  health: 0
 --- !u!212 &495182126
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -691,9 +705,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
   bloodEffect: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  dead: 0
+  maxh: 0
+  health: 0
 --- !u!1 &888137865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,9 +1180,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06ab74052dd74d4bb4e0ebabd467a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  health: 0
   bloodEffect: {fileID: 0}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  dead: 0
+  maxh: 0
+  health: 0
 --- !u!212 &1435403311
 SpriteRenderer:
   m_ObjectHideFlags: 0
