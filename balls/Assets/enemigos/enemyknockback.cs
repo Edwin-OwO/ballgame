@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class knockback : MonoBehaviour
+public class enemyknockback : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private float strength = 50, delay = 0.15f;
+    [SerializeField] private float strength = 16, delay = 0.15f;
     public UnityEvent OnBegin, OnDone;
-    
+
 
     public void PlayFeedback(GameObject sender)
     {
-        StopAllCoroutines ();
+        StopAllCoroutines();
         Debug.Log("Knockback");
         OnBegin?.Invoke();
         Vector2 direction = (transform.position - sender.transform.position).normalized;
@@ -23,7 +23,7 @@ public class knockback : MonoBehaviour
     private IEnumerator Reset()
     {
         yield return new WaitForSeconds(delay);
-        //rb2d.linearVelocity = Vector3.zero;
+        rb2d.linearVelocity = Vector3.zero;
         OnDone.Invoke();
 
     }
