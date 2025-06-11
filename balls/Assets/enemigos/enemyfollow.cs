@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class enemyfollow : MonoBehaviour
 {
-  
+    public bool notenemy;
     public GameObject bloodEffect;
     public UnityEvent<GameObject> OnHit, OnDeath;
     [SerializeField] public bool dead = false;
@@ -32,7 +32,6 @@ public class enemyfollow : MonoBehaviour
         if (health > 0)
         {
             OnHit?.Invoke(sender);
-            Debug.Log("llegamos aca");
 
         }
         else

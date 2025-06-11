@@ -14,7 +14,7 @@ public class attack : MonoBehaviour
     {
         if (cooldown <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space)) 
+            if (Input.GetKeyDown(KeyCode.Mouse0)) 
             {
                 Collider2D[] enemiestodamage = Physics2D.OverlapCircleAll(pos.position, range, whatisenemy);
                 for (int i = 0; i < enemiestodamage.Length; i++) 
