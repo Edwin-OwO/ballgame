@@ -20,8 +20,6 @@ public class attack : MonoBehaviour
                 for (int i = 0; i < enemiestodamage.Length; i++) 
                 {
                     enemiestodamage[i].GetComponent<enemyfollow>().takedamage(damage,transform.parent.gameObject);
-
-
                 }
                 cooldown = start;
 

@@ -48,6 +48,10 @@ public class balldamage : MonoBehaviour
                 enemy.takedamage(damage, gameObject); 
                 
             }
+            else
+            {
+                
+            }
         }
        
       
