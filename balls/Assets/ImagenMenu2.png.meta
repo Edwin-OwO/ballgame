@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a043f41d34488d49a0d0af0a52494b5
+guid: 0d0b699c85b1eea4f9d5faf1c8916ad5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1667372508237673233
-    second: Mjolnir_2018_0
+      213: -913336394460274657
+    second: ImagenMenu2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mjolnir_2018_0
+      name: ImagenMenu2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 728
-        height: 880
+        width: 1536
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11332cd4672b32710800000000000000
-      internalID: 1667372508237673233
+      spriteID: f1062c7636d2353f0800000000000000
+      internalID: -913336394460274657
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mjolnir_2018_0: 1667372508237673233
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
