@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -1374,6 +1378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -1591,6 +1599,10 @@ PrefabInstance:
     - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_Name
       value: Square (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
@@ -2573,6 +2585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -2646,6 +2662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
       value: 2
@@ -2718,6 +2738,10 @@ PrefabInstance:
     - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_Name
       value: Square (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType
@@ -2857,6 +2881,10 @@ PrefabInstance:
     - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_Name
       value: Square (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003986896267877704, guid: d721451fccc8258438bdcacdea36819e, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8280187705847886469, guid: d721451fccc8258438bdcacdea36819e, type: 3}
       propertyPath: m_BodyType

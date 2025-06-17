@@ -40,17 +40,14 @@ public class balldamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+       if (other.gameObject.tag == null)
+           return;
         if (ATTACK == true)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("enemy"))
             {
                 var enemy = other.GetComponent<enemyfollow>();
                 enemy.takedamage(damage, gameObject); 
-                
-            }
-            else
-            {
-                
             }
         }
        

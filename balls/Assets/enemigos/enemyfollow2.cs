@@ -20,9 +20,12 @@ public class enemyfollow2 : MonoBehaviour
     }
     void Update()
     {
-
-        transform.position = Vector2.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
-
+        if (Target != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
+        }
     }
+        
+
     
 }
