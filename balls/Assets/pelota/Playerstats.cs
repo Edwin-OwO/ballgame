@@ -35,6 +35,13 @@ public class Playerstats : MonoBehaviour
             Die();
         }
     }
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // No pasarse del máximo
+        healthbar.setslider(currentHealth); // Actualizar barra de vida
+    }
+
 
     private void Die()
     {
