@@ -1,18 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace TopDown.Movement
 {
-    [RequireComponent(typeof(PlayerInput))] 
+    [RequireComponent(typeof(PlayerInput))]
     public class playermovement : Mover
     {
-
+        internal void ActivateSpeedBoost(float boostMultiplier, float boostDuration)
+        {
+            throw new NotImplementedException();
+        }
 
         private void OnMove(InputValue value)
         {
-            Vector3 playerInput = new Vector3(value.Get<Vector2>().x, value.Get<Vector2>().y,0);
+            Vector3 playerInput = new Vector3(value.Get<Vector2>().x, value.Get<Vector2>().y, 0);
             currentInput = playerInput;
         }
     }
 }
-
