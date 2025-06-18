@@ -1,18 +1,19 @@
 using TopDown.Movement;
 using UnityEngine;
 
-public class SpeedPowerUp : MonoBehaviour
+public class SpeedBuff : MonoBehaviour
 {
-    public float boostMultiplier = 2f;       // Cuánto aumenta la velocidad
-    public float boostDuration = 3f;         // Cuánto dura el boost
+    public float boostMultiplier = 2f;
+    public float boostDuration = 5f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        playermovement player = other.GetComponent<playermovement>();
+        var player = other.GetComponent<playermovement>();
         if (player != null)
         {
             player.ActivateSpeedBoost(boostMultiplier, boostDuration);
-            Destroy(gameObject); // Elimina el power-up después de agarrarlo
+            Destroy(gameObject); // Opcional: eliminar el buff tras recogerlo
         }
     }
 }
+
