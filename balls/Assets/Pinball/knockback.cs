@@ -12,7 +12,10 @@ public class knockback : MonoBehaviour
 
     public void PlayFeedback(GameObject sender)
     {
-        StopAllCoroutines ();
+        if (CompareTag("Player"))
+            return;
+
+        StopAllCoroutines();
         Debug.Log("Knockback");
         OnBegin?.Invoke();
         Vector2 direction = (transform.position - sender.transform.position).normalized;
