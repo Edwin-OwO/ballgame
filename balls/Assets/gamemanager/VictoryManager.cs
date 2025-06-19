@@ -4,34 +4,60 @@ using UnityEngine.UI;
 
 public class VictoryManager : MonoBehaviour
 {
-    public GameObject victoryUI; // Texto o panel de victoria en el Canvas
-    public float delayBeforeRestart = 2f;
+    public GameObject victoryUI;             // Panel de victoria
+    public GameObject bossPrefab;            // Prefab del jefe
+    public Transform bossSpawnPoint;         // Punto de spawn del jefe
 
-    private bool levelWon = false;
+    private bool bossSpawned = false;
+    private GameObject bossInstance;
 
     void Update()
     {
-        if (!levelWon && AllEnemiesDefeated())
+        if (!bossSpawned)
         {
-            WinLevel();
+            if (AllEnemiesDefeated())
+            {
+                SpawnBoss();
+            }
+        }
+        else
+        {
+            if (bossInstance == null) // El jefe fue destruido
+            {
+                WinGame();
+            }
         }
     }
 
     bool AllEnemiesDefeated()
     {
-        // Asegúrate de que tus enemigos tienen la etiqueta "Enemy"
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-        return enemies.Length == 0;
+
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy.GetComponent<BossMarker>() == null)
+            {
+                // Hay al menos un enemigo común aún vivo
+                return false;
+            }
+        }
+
+        // Solo queda el jefe (o nada)
+        return true;
     }
 
-    void WinLevel()
+    void SpawnBoss()
     {
-        levelWon = true;
+        bossInstance = Instantiate(bossPrefab, bossSpawnPoint.position, Quaternion.identity);
+        bossSpawned = true;
+    }
 
+    void WinGame()
+    {
         if (victoryUI != null)
             victoryUI.SetActive(true);
 
-        Invoke("RestartLevel", 2f);
+        Invoke(nameof(RestartLevel), 3f);
     }
 
     void RestartLevel()
