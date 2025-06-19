@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      toppng.com-fireball-png-800x800_0: -265278416474757840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
